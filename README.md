@@ -1,69 +1,21 @@
-# React + TypeScript + Vite
+Opis:
+Rešenje je implementirano korišćenjem React biblioteke, kombinovane sa klasičnim HTML-om, CSS-om.
+Projekat je organizovan u nekoliko komponenti:
+1. Canvas - Radna površina na kojoj korisnik može da proizvoljno postavlja tačke koje kasnije može povezati linijama u redosledu dodavanja tačaka. Tokom rada pored trenutne pozicije na ekranu korisnik može videti i svoje trenutne koordinate na samoj površini.
+2. Button Bar - Jednosavan meni sa opcijama koje korisnik može da koristi tokom rada.
+3. Buttons - Dugmići koji u odnosu na navedenu opciju pružaju određenu funkcionalnost. Funkcionalnosti su: 1. Close Room - Trenutno postavljene tačke povezuju se linijama, u redosledu dodavanja samih tačaka. Svaka linija pored sebe ima napisanu dužinu izraženu u centimetrima. 2. Clear Canvas - Izbacuje prozor za potvrdu kojim korisnik odlučuje da li sa radne površine želi da obriše trenutne tačke i linije između njih. 3. Save as PNG - Trenutni prikaz radne površine izvozi se u vidu .png slike.
+4. Confirmation Modal - Jednostavan prozor za interakciju sa korisnikom pri čišćenju radne površine.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Canvas sadrži najveću količinu logike koda, kao centralna komponenta koja omogućava celokupni rad programa. Propagacija odgovarajućih funkcija i stanja ostalim komponentama ostvarena je pomoću TypeScript interfejsa i propova. Održavanje stanja samog canvasa postignuto je korišćenjem State Hook-ova, koji pamte trenutne tačke, konekcije između njih i poziciju miša na radnoj površini.
 
-Currently, two official plugins are available:
+Pokretanje se može jednostavno izvršiti iz terminala pomoću funkcije: npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Description:
+The solution is implemented using the React library, combined with plain HTML and CSS.
+The project is organised in a couple of components:
+1. Canvas - User workspace where the user can place points at will which can later be connected with lines in the order they were placed. While working, the user can see their current coordinates next to the cursor.
+2. Button Bar - A simple menu with user options.
+3. Buttons - Customized buttons with different funcionalities. The functionalities are: 1. Close Room - Conncets all the placed points with lines in the order the points themselves were added. Each line has it's length displayed next to it in centimeters. 2. Clear Canvas - Activates a pop-up dialogue where user can confirm if they want to clear the canvas of currently placed points and their connections. 3. Save as PNG - Exports the current workspace as a .png picture.
+4. Confirmation Modal - Simple pop-up window for user to confirm if they want to clear the workspace.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The Canvas itself contains the most of the code logic, as it is the central component which enables the core of the app. Propagation of functions and states to the other components is done using TypeScript interfaces and props. Upkeep of the states is done with the use of UseState Hooks, which are used for the Points, Lines that connect them and for keeping track of the current cursor position.
