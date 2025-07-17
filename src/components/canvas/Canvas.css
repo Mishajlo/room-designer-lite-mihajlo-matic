@@ -1,0 +1,7 @@
+.canvas-setup{
+    height: 800px;
+    width: 800px;
+    border: 4px dashed #636363;
+    border-top: none;
+    background-color: lightgray;
+}

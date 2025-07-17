@@ -1,0 +1,13 @@
+.custom-button{
+    border: 2.5px dashed #636363;
+    background-color: darkgray;
+    font-family: "Silkscreen";
+    font-size: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #636363;
+}
+
+.custom-button:hover {
+    filter: drop-shadow(0 0 0.5em darkblue);
+    border-color: darkblue;
+}
