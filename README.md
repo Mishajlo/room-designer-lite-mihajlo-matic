@@ -1,5 +1,5 @@
 Opis:
-Rešenje je implementirano korišćenjem React biblioteke, kombinovane sa klasičnim HTML-om, CSS-om.
+Rešenje je implementirano korišćenjem React biblioteke, kombinovane sa klasičnim HTML-om, CSS-om i TypeScript-om.
 Projekat je organizovan u nekoliko komponenti:
 1. Canvas - Radna površina na kojoj korisnik može da proizvoljno postavlja tačke koje kasnije može povezati linijama u redosledu dodavanja tačaka. Tokom rada pored trenutne pozicije na ekranu korisnik može videti i svoje trenutne koordinate na samoj površini.
 2. Button Bar - Jednosavan meni sa opcijama koje korisnik može da koristi tokom rada.
@@ -11,7 +11,7 @@ Canvas sadrži najveću količinu logike koda, kao centralna komponenta koja omo
 Pokretanje se može jednostavno izvršiti iz terminala pomoću funkcije: npm run dev
 
 Description:
-The solution is implemented using the React library, combined with plain HTML and CSS.
+The solution is implemented using the React library, combined with plain HTML, CSS and TypeScript.
 The project is organised in a couple of components:
 1. Canvas - User workspace where the user can place points at will which can later be connected with lines in the order they were placed. While working, the user can see their current coordinates next to the cursor.
 2. Button Bar - A simple menu with user options.
