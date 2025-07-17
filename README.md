@@ -19,3 +19,5 @@ The project is organised in a couple of components:
 4. Confirmation Modal - Simple pop-up window for user to confirm if they want to clear the workspace.
 
 The Canvas itself contains the most of the code logic, as it is the central component which enables the core of the app. Propagation of functions and states to the other components is done using TypeScript interfaces and props. Upkeep of the states is done with the use of UseState Hooks, which are used for the Points, Lines that connect them and for keeping track of the current cursor position.
+
+The program can simply be ran from the terminal using the npm run dev command
